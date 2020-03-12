@@ -1,0 +1,49 @@
+﻿@page
+@model DeliverPlan.Pages.Tanks.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Tank</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Tank.Tag" class="control-label"></label>
+                <input asp-for="Tank.Tag" class="form-control" />
+                <span asp-validation-for="Tank.Tag" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tank.Level" class="control-label"></label>
+                <input asp-for="Tank.Level" class="form-control" />
+                <span asp-validation-for="Tank.Level" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tank.Capacity" class="control-label"></label>
+                <input asp-for="Tank.Capacity" class="form-control" />
+                <span asp-validation-for="Tank.Capacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tank.Customer.ID" class="control-label"></label>
+                <input asp-for="Tank.Customer.ID" class="form-control" />
+                <span asp-validation-for="Tank.Customer.ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
