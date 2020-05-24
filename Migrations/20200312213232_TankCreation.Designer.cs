@@ -3,14 +3,16 @@ using DeliverPlan.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DeliverPlan.Migrations
 {
     [DbContext(typeof(DeliverPlanContext))]
-    partial class DeliverPlanContextModelSnapshot : ModelSnapshot
+    [Migration("20200312213232_TankCreation")]
+    partial class TankCreation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

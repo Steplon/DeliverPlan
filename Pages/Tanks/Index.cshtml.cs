@@ -19,11 +19,14 @@ namespace DeliverPlan.Pages.Tanks
             _context = context;
         }
 
-        public IList<Tank> Tank { get;set; }
+        public IList<Tank> Tanks { get;set; }
 
         public async Task OnGetAsync()
         {
-            Tank = await _context.Tank.ToListAsync();
+            //https://docs.microsoft.com/en-us/aspnet/core/data/ef-rp/read-related-data?view=aspnetcore-3.1&tabs=visual-studio
+
+            Tanks = await _context.Tank.ToListAsync();
+            
         }
     }
 }

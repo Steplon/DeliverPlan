@@ -21,7 +21,7 @@ namespace DeliverPlan.Models
         public int Capacity { get; set; }
 
         [Required]
-        public Customer Customer { get; set; }
+        public string CustomerID { get; set; }
 
     }
 }

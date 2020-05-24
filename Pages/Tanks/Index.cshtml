@@ -2,10 +2,10 @@
 @model DeliverPlan.Pages.Tanks.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Tanks";
 }
 
-<h1>Index</h1>
+<h1>Tanks</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -14,17 +14,29 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Tank[0].Level)
+                @Html.DisplayNameFor(model => model.Tanks[0].CustomerID)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Tank[0].Capacity)
+                @Html.DisplayNameFor(model => model.Tanks[0].Tag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tanks[0].Level)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tanks[0].Capacity)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Tank) {
+@foreach (var item in Model.Tanks) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tag)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Level)
             </td>

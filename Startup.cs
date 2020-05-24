@@ -32,6 +32,7 @@ namespace DeliverPlan
                     options.UseSqlServer(Configuration.GetConnectionString("AzureSQLServerDatabase")));
 
             services.BuildServiceProvider().GetService<DeliverPlanUserContext>().Database.Migrate();
+            services.BuildServiceProvider().GetService<DeliverPlanContext>().Database.Migrate();
 
         }
 
