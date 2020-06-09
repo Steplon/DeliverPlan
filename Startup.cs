@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using DeliverPlan.Data;
+using DeliverPlan.Services;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace DeliverPlan
 {
@@ -32,6 +34,12 @@ namespace DeliverPlan
 
             services.BuildServiceProvider().GetService<DeliverPlanUserContext>().Database.Migrate();
             services.BuildServiceProvider().GetService<DeliverPlanContext>().Database.Migrate();
+
+            // requires
+            // using Microsoft.AspNetCore.Identity.UI.Services;
+            // using WebPWrecover.Services;
+            services.AddTransient<IEmailSender, EmailSender>();
+            services.Configure<AuthMessageSenderOptions>(Configuration);
 
         }
 
