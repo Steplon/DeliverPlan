@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DeliverPlan.Data;
-using DeliverPlann.Models;
+using DeliverPlan.Models;
 
 namespace DeliverPlan.Pages.Customers
 {
