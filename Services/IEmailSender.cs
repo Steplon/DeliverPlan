@@ -25,6 +25,11 @@ namespace DeliverPlan.Services
 
         public Task Execute(string apiKey, string subject, string message, string email)
         {
+            if (System.Environment.GetEnvironmentVariable("SENDGRID_APIKEY") != null)
+            {
+                apiKey = System.Environment.GetEnvironmentVariable("SENDGRID_APIKEY");
+
+            }
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {

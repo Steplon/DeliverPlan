@@ -23,6 +23,8 @@ namespace DeliverPlan.Pages.Tanks
         [BindProperty]
         public Tank Tank { get; set; }
 
+        public List<SelectListItem> Customers { get; set; }
+
         public async Task<IActionResult> OnGetAsync(string id)
         {
             if (id == null)
@@ -36,7 +38,16 @@ namespace DeliverPlan.Pages.Tanks
             {
                 return NotFound();
             }
+
+            Customers = _context.Customer.Select(a =>
+                      new SelectListItem
+                      {
+                          Value = a.ID,
+                          Text = a.CompanyName
+                      }).ToList();
+
             return Page();
+
         }
 
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
