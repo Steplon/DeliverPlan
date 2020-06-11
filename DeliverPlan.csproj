@@ -6,6 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="TankLevelWebJob\**" />
+    <EmbeddedResource Remove="TankLevelWebJob\**" />
+    <None Remove="TankLevelWebJob\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Migrations\20200310201959_InitalCreateCustTankTract.cs" />
     <Compile Remove="Migrations\20200310201959_InitalCreateCustTankTract.Designer.cs" />
     <Compile Remove="Migrations\DeliverPlanUser\20200310205754_CustomUserData.cs" />
