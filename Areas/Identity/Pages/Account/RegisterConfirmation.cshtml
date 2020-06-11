@@ -5,7 +5,7 @@
 }
 
 <h1>@ViewData["Title"]</h1>
-@{
+@*@{
     if (@Model.DisplayConfirmAccountLink)
     {
 <p>
@@ -17,6 +17,10 @@
     {
 <p>
         Please check your email to confirm your account.
+    <a class="nav-link text-dark" asp-area="" asp-page="/Areas/Identity/Pages/ResendEmailConfirmation">Click this link to resend the confirmation email</a>
 </p>
     }
-}
+}*@
+<p>
+    Please check your email to confirm your account.
+</p>

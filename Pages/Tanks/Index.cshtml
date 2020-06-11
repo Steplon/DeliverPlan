@@ -25,7 +25,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Tanks[0].Capacity)
             </th>
-            <th></th>
+            <th>Liquid Level</th>
         </tr>
     </thead>
     <tbody>
@@ -38,10 +38,13 @@
                 @Html.DisplayFor(modelItem => item.Tag)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Level)
+                @Html.DisplayFor(modelItem => item.Level)%
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Capacity)
+                @Html.DisplayFor(modelItem => item.Capacity)l
+            </td>
+            <td>
+                @Math.Round(@item.Capacity*(@item.Level/100))l
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Tag">Edit</a> |
