@@ -27,7 +27,16 @@ namespace DeliverPlan
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            //services.AddRazorPages();
+
+            services.AddRazorPages()
+    .AddRazorPagesOptions(options =>
+    {
+        //allow access to these folders by logged in users only
+        options.Conventions.AuthorizeFolder("/Tanks");
+        options.Conventions.AuthorizeFolder("/Customers");
+        options.Conventions.AuthorizeFolder("/Tractors");
+    });
 
             services.AddDbContext<DeliverPlanContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("AzureSQLServerDatabase")));
